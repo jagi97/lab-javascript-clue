@@ -9,7 +9,7 @@ var mrGreen = {
 }
 
 var drOrchid = {
-    frst_name:   "Doctor",
+    first_name:   "Doctor",
     last_name:    "Orchid",
     color:        "white",
     description:  "PhD in plant toxicology. Adopted daughter of Mr. Boddy",
@@ -59,39 +59,39 @@ var mrMustard = {
 }
 
 var rope = {
-     name = "rope",
+     nombre : "rope",
      weight: 10
 }
 var knife = {
-    name = "knife",
+    nombre: "knife",
     weight: 8
 }
 var candlestick = {
-    name = "candlestick",
+    nombre: "candlestick",
     weight: 2
 }
 var dumbbell = {
-    name = "dumbbell",
+    nombre: "dumbbell",
     weight: 30
 }
 var poison = {
-    name = "poison",
+    nombre: "poison",
     weight: 2
 }
 var axe = {
-    name = "axe",
+    nombre: "axe",
     weight: 15
 }
 var bat = {
-    name = "bat",
+    nombre: "bat",
     weight: 13
 }
 var trophy = {
-    name = "trophy",
+    nombre: "trophy",
     weight: 25
 }
 var pistol = {
-    name = "pistol",
+    nombre: "pistol",
     weight: 20
 }
 
@@ -114,4 +114,23 @@ var Sitios = [
     "Guest House",
     "Patio"
 ]
-var 
+
+function escoger (arrays){
+    return arrays[Math.floor(Math.random()*arrays.length)];
+}
+
+function mistery(){
+    var misterio = {
+        personaje: escoger(Personajes),
+        sitio: escoger(Sitios),
+        arma: escoger(Armas)
+    }
+    return misterio
+}
+var misterio = mistery();
+
+function revelar(misterio){
+    console.log(misterio.personaje.first_name +" "+ misterio.personaje.last_name + " ha matado a Mr.Boddy usando "+ misterio.arma.nombre +" en "+ misterio.sitio);
+}
+
+revelar(misterio);
